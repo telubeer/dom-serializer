@@ -28,13 +28,20 @@ function formatAttrs(attributes, opts) {
   // Loop through the attributes
   for (var key in attributes) {
     value = attributes[key];
+    if (opts.decodeEntities) {
+      value = entities.encodeXML(value);
+    }
     if (output) {
       output += ' ';
     }
 
     output += key;
     if ((value !== null && value !== '') || opts.xmlMode) {
-        output += '="' + (opts.decodeEntities ? entities.encodeXML(value) : value) + '"';
+        var quote = '"';
+        if (value.indexOf('"') > -1) {
+                quote = '\'';
+        }
+        output += '=' + quote + (opts.decodeEntities ? entities.encodeXML(value) : value) + quote;
     }
   }
 

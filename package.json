@@ -1,6 +1,6 @@
 {
   "name": "dom-serializer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "render dom nodes to string",
   "author": "Felix Boehm <me@feedic.com>",
   "keywords": [
@@ -8,9 +8,12 @@
     "xml",
     "render"
   ],
+  "publishConfig": {
+    "registry": "http://sinopia.app.s"
+  },
   "repository": {
     "type": "git",
-    "url": "git://github.com/cheeriojs/dom-renderer.git"
+    "url": "git://github.com/telubeer/dom-renderer.git"
   },
   "main": "./index.js",
   "files": [
